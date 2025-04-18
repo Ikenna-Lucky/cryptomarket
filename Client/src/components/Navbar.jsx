@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import logo from "../../src/assets/logo.png";
+import logo from "../assets/logo.png";
 import arrow_icon from "../assets/arrow_icon.png";
 import { coinContext } from "../context/coinContext";
 import { NavLink } from "react-router-dom";
