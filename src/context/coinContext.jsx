@@ -4,13 +4,14 @@ const coinContext = createContext();
 const CoinContextProvider = (props) => {
   const [allCoin, setAllCoin] = useState([]);
   const [currency, setCurrency] = useState({ name: "usd", symbol: "$" });
+  const secretKey = import.meta.env.VITE_SECRET_KEY;
 
   const fetchAllCoin = async () => {
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        "x-cg-demo-api-key": "	CG-fctJMB3Po1s28N3K5rQaLJcc",
+        "x-cg-demo-api-key": secretKey,
       },
     };
 
@@ -33,6 +34,7 @@ const CoinContextProvider = (props) => {
     currency,
     setCurrency,
     fetchAllCoin,
+    secretKey
   };
   return (
     <coinContext.Provider value={contextValue}>

@@ -6,11 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import { CoinContextProvider } from "./context/coinContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <CoinContextProvider>
-      <StrictMode>
+  <StrictMode>
+    <BrowserRouter>
+      <CoinContextProvider>
         <App />
-      </StrictMode>
-    </CoinContextProvider>
-  </BrowserRouter>
+      </CoinContextProvider>
+    </BrowserRouter>
+  </StrictMode>
 );

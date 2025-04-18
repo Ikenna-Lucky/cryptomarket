@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import logo from "../../src/assets/logo.png";
 import arrow_icon from "../assets/arrow_icon.png";
 import { coinContext } from "../context/coinContext";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const { setCurrency } = useContext(coinContext);
   const currencyHandler = (e) => {
     switch (e.target.value) {
@@ -28,17 +31,30 @@ const Navbar = () => {
   };
   return (
     <div className="flex items-center justify-between py-5 px-[5%] text-[#ddd] border-b-2 border-[#3c3c3c] lg:px-[8%]">
-      <img src={logo} className="w-[max(12vw,120px)]" alt="" />
+      <img
+        onClick={() => navigate("/")}
+        src={logo}
+        className="w-[max(12vw,120px)]"
+        alt=""
+      />
       <ul className="sm:flex lg:gap-10 sm:gap-5 hidden">
-        <li className="cursor-pointer">Home</li>
-        <li className="cursor-pointer">Features</li>
-        <li className="cursor-pointer">Pricing</li>
-        <li className="cursor-pointer">Blog</li>
+        <NavLink>
+          <li className="cursor-pointer">Home</li>
+        </NavLink>
+        <NavLink>
+          <li className="cursor-pointer">Features</li>
+        </NavLink>
+        <NavLink>
+          <li className="cursor-pointer">Pricing</li>
+        </NavLink>
+        <NavLink>
+          <li className="cursor-pointer">Blog</li>
+        </NavLink>
       </ul>
-      <div className="flex items-center gap-5">
+      <div className="flex items-center gap-5 max-[376px]:gap-2.5">
         <select
           onChange={currencyHandler}
-          className="hidden py-1.5 border-2 border-white text-white outline-0 rounded sm:px-4 lg:px-7 sm:block"
+          className="py-1.5 border-2 border-white text-white outline-0 rounded sm:px-4 lg:px-7 max-[375px]:text-[11px]"
           name=""
           id=""
         >
@@ -52,7 +68,7 @@ const Navbar = () => {
             INR
           </option>
         </select>
-        <button className="flex items-center gap-2.5 py-1.5 px-2 rounded text-sm font-medium text-[#393939] bg-white border-0 cursor-pointer sm:px-4 sm:py-2.5 lg:px-6">
+        <button className="flex items-center gap-2.5 py-1.5 px-2 rounded-full text-sm font-medium text-[#393939] bg-white border-0 cursor-pointer sm:px-4 sm:py-2.5 lg:px-6 max-[375px]:text-[12px]">
           Sign Up <img src={arrow_icon} alt="" width={13} />
         </button>
       </div>
