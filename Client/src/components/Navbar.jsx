@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import logo from "../assets/logo.png";
-import arrow_icon from "../assets/arrow_icon.png";
+import logo from "../assets/logo.svg";
+import arrow_icon from "../assets/arrow_icon.svg";
 import { coinContext } from "../context/coinContext";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -30,7 +30,7 @@ const Navbar = () => {
     }
   };
   return (
-    <div className="flex items-center justify-between py-5 px-[5%] text-[#ddd] border-b-2 border-[#3c3c3c] lg:px-[8%]">
+    <div className="flex items-center justify-between py-5 px-[5%] border-b border-[#3c3c3c] lg:px-[8%]">
       <img
         onClick={() => navigate("/")}
         src={logo}
@@ -54,21 +54,21 @@ const Navbar = () => {
       <div className="flex items-center gap-5 max-[376px]:gap-2.5">
         <select
           onChange={currencyHandler}
-          className="py-1.5 border-2 border-white text-white outline-0 rounded sm:px-4 lg:px-7 max-[375px]:text-[11px]"
+          className="py-1.5 border-2 border-[#333] text-[#333] outline-0 rounded sm:px-4 lg:px-7 max-[375px]:text-[11px]"
           name=""
           id=""
         >
-          <option className="bg-[#09005c] text-white" value="usd">
+          <option className="bg-[#333] text-white hover:bg-[#666]" value="usd">
             USD
           </option>
-          <option className="bg-[#09005c] text-white" value="eur">
+          <option className="bg-[#333] text-white hover:bg-[#666]" value="eur">
             EUR
           </option>
-          <option className="bg-[#09005c] text-white" value="inr">
+          <option className="bg-[#333] text-white hover:bg-[#666]" value="inr">
             INR
           </option>
         </select>
-        <button className="flex items-center gap-2.5 py-1.5 px-2 rounded-full text-sm font-medium text-[#393939] bg-white border-0 cursor-pointer sm:px-4 sm:py-2.5 lg:px-6 max-[375px]:text-[12px]">
+        <button className="flex items-center gap-2.5 py-1.5 px-2 rounded-full text-sm font-medium bg-[#333] text-white border-0 cursor-pointer sm:px-4 sm:py-2.5 lg:px-6 max-[375px]:text-[12px]">
           Sign Up <img src={arrow_icon} alt="" width={13} />
         </button>
       </div>

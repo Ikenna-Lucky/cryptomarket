@@ -63,11 +63,11 @@ const Coin = () => {
           <LineChart historicalData={historicalData} />
         </div>
         <div className="flex flex-col my-32 mx-auto w-[600px] max-sm:w-[300px] md:w-[600px] lg:w-[800px] justify-between">
-          <ul className="flex justify-between py-2.5 border-b border-[#5f5d5f]">
+          <ul className="flex justify-between py-2.5 border-b border-[#666]">
             <li>Crypto Market Rank</li>
             <li className="font-light">{coinData.market_cap_rank}</li>
           </ul>
-          <ul className="flex justify-between py-2.5 border-b border-[#5f5d5f]">
+          <ul className="flex justify-between py-2.5 border-b border-[#666]">
             <li>Current Price</li>
             <li className="font-light">
               {currency.symbol}{" "}
@@ -76,21 +76,21 @@ const Coin = () => {
               ].toLocaleString()}
             </li>
           </ul>
-          <ul className="flex gap-10 justify-between py-2.5 border-b border-[#5f5d5f]">
+          <ul className="flex gap-10 justify-between py-2.5 border-b border-[#666]">
             <li>Market Cap</li>
             <li className="font-light">
               {currency.symbol}{" "}
               {coinData.market_data.market_cap[currency.name].toLocaleString()}
             </li>
           </ul>
-          <ul className="flex justify-between py-2.5 border-b border-[#5f5d5f]">
+          <ul className="flex justify-between py-2.5 border-b border-[#666]">
             <li>24 Hour High</li>
             <li className="font-light">
               {currency.symbol}{" "}
               {coinData.market_data.high_24h[currency.name].toLocaleString()}
             </li>
           </ul>
-          <ul className="flex justify-between py-2.5 border-b border-[#5f5d5f]">
+          <ul className="flex justify-between py-2.5 border-b border-[#666]">
             <li>24 Hour Low</li>
             <li className="font-light">
               {currency.symbol}{" "}
@@ -103,7 +103,7 @@ const Coin = () => {
   } else {
     return (
       <div className="grid place-self-center min-h-[80vh] ">
-        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-white m-auto"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#333] m-auto"></div>
       </div>
     );
   }

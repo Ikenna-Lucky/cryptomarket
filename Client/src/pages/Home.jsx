@@ -32,13 +32,13 @@ const Home = () => {
         <h1 className="text-[max(4vw,36px)] font-semibold">
           Largest <br /> crypto Market Place
         </h1>
-        <p className="w-3/4 text-[#e3e3e3] text-base">
+        <p className="w-3/4 text-[#666] text-base">
           Welcome to the world's Largest cryptocurrency marketplaces. Sign up to
           explore more about cryptos.
         </p>
         <form
           onSubmit={searchHandler}
-          className="p-2 min-w-4/5 bg-white rounded-[5px] text-xl flex justify-between items-center sm:gap-2.5 "
+          className="p-2 min-w-4/5 bg-white border border-[#666] rounded-[5px] text-xl flex justify-between items-center sm:gap-2.5 "
         >
           <input
             onChange={inputHandler}
@@ -66,8 +66,8 @@ const Home = () => {
           </button>
         </form>
       </div>
-      <div className="w-full sm:max-w-[800px] m-auto bg-[linear-gradient(rgba(84,3,255,0.15),rgba(105,2,153,0.15))] rounded-2xl overflow-hidden overflow-x-scroll">
-        <div className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1.5fr] py-4 px-5 items-center border-b border-[#3c3c3c]  max-md:grid-cols-[0.5fr_3fr_1fr_1fr] max-sm:grid-cols-[3fr_1fr_1fr]">
+      <div className="w-full sm:max-w-[800px] m-auto bg-[linear-gradient(rgba(84,3,255,0.15),rgba(105,2,153,0.15))] rounded-2xl">
+        <div className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1.5fr] py-4 px-5 items-center border-b border-[#666]  max-md:grid-cols-[0.5fr_3fr_1fr_1fr] max-sm:grid-cols-[3fr_1fr_1fr]">
           <p className="max-sm:hidden">#</p>
           <p>Coins</p>
           <p>Price</p>
@@ -77,7 +77,7 @@ const Home = () => {
         {displayCoin.slice(0, 10).map((item, index) => (
           <Link to = {`/coin/${item.id}`}
             key={index}
-            className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1.5fr] py-4 px-5 items-center border-b border-[#3c3c3c] nth-last-[1]:border-0 max-md:grid-cols-[0.5fr_3fr_1fr_1fr] max-sm:text-sm max-sm:grid-cols-[3fr_1fr_1fr]"
+            className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1.5fr] py-4 px-5 items-center border-b border-[#666] nth-last-[1]:border-0 max-md:grid-cols-[0.5fr_3fr_1fr_1fr] max-sm:text-sm max-sm:grid-cols-[3fr_1fr_1fr]"
           >
             <p className="max-sm:hidden">{item.market_cap_rank}</p>
             <div className="flex  items-center gap-2.5">

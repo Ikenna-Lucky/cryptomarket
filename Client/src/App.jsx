@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div className="min-h-screen text-white bg-[linear-gradient(#0b004e,#1d152f,#002834)]">
+    <div className="min-h-screen text-[#333] bg-[linear-gradient(#FFFFFF,#F8F8F8,#F0F0F0)]">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
